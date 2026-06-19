@@ -21,9 +21,9 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background:rad
 </style>
 </head>
 <body>
-<audio id="camino-audio" src="assets/camino-surf-at-dawn.mp3" preload="auto" loop playsinline></audio>
-<button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false" aria-label="開啟 Camino 背景海聲">🎵 開啟海聲</button>
-<div class="sound-hint" id="sound-hint">手機瀏覽器可能會擋自動播放，點一下就能開啟 Camino 海聲。</div>
+<audio id="camino-audio" src="assets/camino-calm-piano.mp3" preload="auto" loop playsinline></audio>
+<button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false" aria-label="開啟 Camino 背景音樂">🎵 開啟音樂</button>
+<div class="sound-hint" id="sound-hint">手機瀏覽器可能會擋自動播放，點一下就能開啟 Camino 背景音樂。</div>
 <header class="site-header" id="top">
   <div class="hero">
     <figure class="hero-art"><img src="assets/00-cover.png" alt="海風把我打開，路把我帶回自己"></figure>
@@ -52,12 +52,12 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background:rad
   const button = document.getElementById('sound-toggle');
   const hint = document.getElementById('sound-hint');
   if (!audio || !button) return;
-  audio.volume = 0.26;
+  audio.volume = 0.22;
 
   const setPlaying = (playing) => {
     button.classList.toggle('is-playing', playing);
     button.setAttribute('aria-pressed', String(playing));
-    button.textContent = playing ? '🌊 暫停海聲' : '🎵 開啟海聲';
+    button.textContent = playing ? '⏸ 暫停音樂' : '🎵 開啟音樂';
   };
 
   const showHint = () => {
